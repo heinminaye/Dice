@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Die'),
+      home: const MyHomePage(title: 'Dice'),
     );
   }
 }
@@ -39,15 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void radomDiceO() {
     setState(() {
-      diceList.shuffle();
-      _diceOne = diceList[0];
+      _diceOne = diceList[Random().nextInt(5)];
     });
   }
 
   void radomDiceT() {
     setState(() {
-      diceList.shuffle();
-      _diceTwo = diceList[0];
+      _diceTwo = diceList[Random().nextInt(5)];
     });
   }
 
@@ -55,19 +57,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: GoogleFonts.lobster(),
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              text,
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Lobster',
-                  fontWeight: FontWeight.bold),
-            ),
+            Text(text,
+                style: GoogleFonts.aclonica(
+                    fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(
               height: 50,
             ),
@@ -76,7 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Column(
                   children: [
-                    const Text("Player 1"),
+                    Text(
+                      "Player 1",
+                      style: GoogleFonts.acme(),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -100,7 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Column(
                   children: [
-                    const Text("Player 2"),
+                    Text(
+                      "Player 2",
+                      style: GoogleFonts.acme(),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
