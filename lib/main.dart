@@ -43,13 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void radomDiceO() {
     setState(() {
-      _diceOne = diceList[Random().nextInt(5)];
+      _diceOne = diceList[Random().nextInt(6)];
     });
   }
 
   void radomDiceT() {
     setState(() {
-      _diceTwo = diceList[Random().nextInt(5)];
+      _diceTwo = diceList[Random().nextInt(6)];
     });
   }
 
