@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(
                       "Player 1",
-                      style: GoogleFonts.acme(),
+                      style: GoogleFonts.adamina(),
                     ),
                     const SizedBox(
                       height: 20,
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(
                       "Player 2",
-                      style: GoogleFonts.acme(),
+                      style: GoogleFonts.adamina(),
                     ),
                     const SizedBox(
                       height: 20,
